@@ -125,7 +125,7 @@ int main (int argc, char* argv[]) {
                     printjson(&data);
                 } else {
                     // если parsedata не удалось распарсить параметры из строки, выдаем ошибку что строка некорректна
-                    printf(err_str);
+                    printf("%s\n", err_str);
                 }
                 break; // выходим из цикла
             }
@@ -137,7 +137,7 @@ int main (int argc, char* argv[]) {
             unsigned long long t = 1000 * (current.tv_sec - start.tv_sec) + (current.tv_usec - start.tv_usec) / 1000;
 
             if (t > 5000) { // если с момента начала ожидания ответа от ups прошло более 5000 мс, то пишем ошибку о таймауте и выходим.
-                printf(err_str);
+                printf("s\n", err_str);
                 break;
             }
         }
